@@ -368,7 +368,6 @@
    
     <audio id="bg-music" loop>
         <source src="musica/MUSICADELA.mp3" type="audio/MPEG">
-        <source src="https://cdn.pixabay.com/download/audio/2022/10/05/audio_68612125da.mp3" type="audio/mpeg">
     </audio>
 
     <!-- Player Customizado com Volume XD -->
@@ -640,7 +639,7 @@
                 const screenX = width / 2 + (this.worldX + currentPanX) * currentZoom;
                 const screenY = height / 2 + (this.worldY + currentPanY) * currentZoom;
 
-                // Otimização: Não desenhar se estiver muito fora da tela
+                // Otimização
                 if (screenX < -600 || screenX > width + 600 || screenY < -600 || screenY > height + 600) {
                     if (this.el.classList.contains('visible')) this.el.classList.remove('visible');
                     return;
