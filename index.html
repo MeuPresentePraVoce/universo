@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Para Duda</title>
+    <title>Nosso Universo</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300&family=Poppins:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -43,7 +43,7 @@
             cursor: grabbing;
         }
 
-        /* Menu / Splash Screen */
+        /* O menu, overlay e essas frescuras KKKKKKKK */
         #menu-overlay {
             position: fixed;
             inset: 0;
@@ -99,7 +99,7 @@
             box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
         }
 
-        /* Planetas Decorativos */
+        /* Os planetas, mas todos sabemos que a terra é plana */
         .planet {
             position: absolute;
             border-radius: 50%;
@@ -120,7 +120,7 @@
             50% { transform: translate(20px, -30px); }
         }
 
-        /* UI Elements */
+        /* Elemntos da UI - HUD, player etc */
         .hud {
             position: fixed;
             pointer-events: none;
@@ -129,16 +129,7 @@
             transition: opacity 1s ease;
         }
 
-        .title-box { top: 2rem; left: 2rem; }
-        .title-box h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            letter-spacing: 0.4em;
-            text-transform: uppercase;
-            font-weight: 300;
-        }
-
-        /* PLAYER CUSTOMIZADO CORRIGIDO */
+        /* player que tava enchendo o saco bugando */
         .music-player {
             position: fixed;
             bottom: 2rem;
@@ -146,10 +137,10 @@
             transform: translateX(-50%) translateY(20px);
             z-index: 20;
             display: flex;
-            flex-wrap: nowrap; /* Evita quebra */
+            flex-wrap: nowrap; 
             align-items: center;
             gap: 15px;
-            background: rgba(15, 15, 25, 0.85); /* Fundo um pouco mais escuro para contraste */
+            background: rgba(15, 15, 25, 0.85); 
             backdrop-filter: blur(15px);
             padding: 12px 24px;
             border-radius: 50px;
@@ -182,8 +173,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 44px; /* Aumentado para toque */
-            height: 44px; /* Aumentado para toque */
+            width: 44px; 
+            height: 44px;
             border-radius: 50%;
             background: rgba(255,255,255,0.05);
             transition: all 0.2s;
@@ -199,7 +190,7 @@
         .play-btn svg {
             width: 24px;
             height: 24px;
-            fill: var(--star-gold); /* Cor destaque */
+            fill: var(--star-gold); 
         }
 
         .track-info {
@@ -230,7 +221,7 @@
             max-width: 150px;
         }
 
-        /* Equalizador */
+        /* Equalizador KKKKKKKKKKKKKKKKKKKKKKK */
         .equalizer {
             display: flex;
             gap: 3px;
@@ -259,7 +250,7 @@
             50% { height: 100%; }
         }
 
-        /* Controle de Volume */
+        /* Aumenta e diminui la ele */
         .volume-control {
             display: flex;
             align-items: center;
@@ -343,7 +334,7 @@
             .quote-label { width: 80vw; font-size: 1.1rem; }
             .title-box h1 { font-size: 1.2rem; }
             
-            /* Ajustes Mobile Player */
+         
             .music-player { 
                 bottom: 20px; 
                 width: 92%; 
@@ -360,7 +351,7 @@
 </head>
 <body>
 
-    <!-- Splash Menu -->
+    
     <div id="menu-overlay">
         <div class="menu-content">
             <div class="planet p1"></div>
@@ -374,31 +365,22 @@
         </div>
     </div>
 
-    <!-- Música de Fundo 
-         OBS: Substituí o src por um link público funcional para testes.
-         Quando for usar o arquivo real, altere o src abaixo para: "musica/henrique-juliano-ceu-explica-tudo.mp3"
-    -->
+   
     <audio id="bg-music" loop>
-        <!-- Link de exemplo funcional (Debussy - Clair de Lune) para você testar o player -->
         <source src="musica/MUSICADELA.mp3" type="audio/MPEG">
-        <!-- Fallback MP3 se necessário -->
         <source src="https://cdn.pixabay.com/download/audio/2022/10/05/audio_68612125da.mp3" type="audio/mpeg">
     </audio>
 
-    <div class="hud title-box">
-        <h1>Constelações</h1>
-    </div>
-
-    <!-- Player Customizado com Volume -->
+    <!-- Player Customizado com Volume XD -->
     <div class="music-player" id="music-player">
         
         <div class="controls-left">
             <button class="play-btn" id="toggle-music" aria-label="Tocar ou Pausar Música">
-                <!-- Ícone Play -->
+                
                 <svg id="play-icon" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z"/>
                 </svg>
-                <!-- Ícone Pause -->
+                
                 <svg id="pause-icon" viewBox="0 0 24 24" style="display: none;">
                     <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
                 </svg>
@@ -442,11 +424,11 @@
         const startBtn = document.getElementById('start-btn');
         const volumeSlider = document.getElementById('volume-slider');
 
-        // Configuração Inicial de Volume
+        // volume começa assim
         bgMusic.volume = 0.4;
         volumeSlider.value = 0.4;
 
-        // --- SISTEMA DE CITAÇÕES ---
+        // as frases pra minha princesa 
         const QUOTES = [
             "Dizem que um homem só se apaixona uma única vez, isso de fato é uma mentira, pois me apaixonei no brilho de seus olhos, no teu mais belo sorriso, e em tua mais doce voz.",
             "Você é tão linda que a lua e o sol se revezam para contemplar sua beleza.",
@@ -525,14 +507,14 @@
         const constellations = [];
         const SPREAD = 9000;
 
-        // --- SISTEMA DE MÚSICA MELHORADO ---
+        // --- Melhoras nql porqueira ---
         
-        // 1. Controle de Volume
+        // controle de volume
         volumeSlider.addEventListener('input', (e) => {
             bgMusic.volume = e.target.value;
         });
 
-        // 2. Atualização de Ícones baseada no estado real do áudio
+        // ai é um bgl q eu nao sei explicar, mas ta ai KKKKKK (gemini me ajudou nessa, thx brother)
         function updatePlayerUI() {
             if (!bgMusic.paused) {
                 playIcon.style.display = 'none';
@@ -545,17 +527,16 @@
             }
         }
 
-        // Listeners para garantir sincronia
+        // Sincronia
         bgMusic.addEventListener('play', updatePlayerUI);
         bgMusic.addEventListener('pause', updatePlayerUI);
         bgMusic.addEventListener('ended', () => {
-             // Loop já está ativado no HTML, mas garante update visual
             updatePlayerUI();
         });
 
-        // 3. Toggle Botão
+        //  butão
         toggleMusicBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Evita clicar no canvas atrás
+            e.stopPropagation();
             if (bgMusic.paused) {
                 bgMusic.play().catch(e => console.error("Erro ao dar play:", e));
             } else {
@@ -563,40 +544,40 @@
             }
         });
 
-        // Início da Experiência
+        // Viagem a lua (sqn)
         function startExperience() {
             menu.classList.add('hidden');
             
-            // Tenta tocar
+            // Tenta tocar, só tenta, mas tipo, só tenta msm KKKKKKKKKKK
             const playPromise = bgMusic.play();
             
             if (playPromise !== undefined) {
                 playPromise.then(_ => {
-                    // Sucesso no autoplay
+                    // gg tropa 
                 })
                 .catch(error => {
                     console.log("Autoplay bloqueado pelo navegador. O usuário precisa clicar no play.");
                 });
             }
 
-            // Mostra o player suavemente
+            // aquele efeitinho goxtoso
             setTimeout(() => {
                 musicPlayer.classList.add('visible');
             }, 1000);
 
-            // Animação de zoom inicial
+            // outro tesudo
             setTimeout(() => { targetZoom = 0.65; }, 1000);
         }
 
-        // Eventos do Botão Iniciar
+        // pra iniciar a brincadeira
         startBtn.addEventListener('click', startExperience);
         startBtn.addEventListener('touchend', (e) => {
-            e.preventDefault(); // Prioriza toque no mobile
+            e.preventDefault();
             startExperience();
         }, { passive: false });
 
 
-        // --- LÓGICA DO CANVAS E ESTRELAS ---
+        // estrelinha e o viado do canvas
 
         function lerp(start, end, factor) {
             return start + (end - start) * factor;
@@ -775,14 +756,14 @@
             requestAnimationFrame(animate);
         }
 
-        // --- CONTROLES DE INTERAÇÃO (Mouse & Touch) ---
+        // mouse e o touch (QUE BAGULHO CHATOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO)
 
         window.addEventListener('wheel', (e) => {
             targetZoom -= e.deltaY * 0.001;
             targetZoom = Math.min(Math.max(targetZoom, 0.1), 4);
         }, { passive: true });
 
-        // Mouse Events
+        // eventos do mouse rs
         window.addEventListener('mousedown', (e) => {
             if (e.target.closest('#music-player') || e.target.closest('#menu-overlay')) return;
             isDragging = true;
@@ -804,7 +785,7 @@
             canvas.style.cursor = 'grab';
         });
 
-        // Touch Events
+        // exame de prostata (eventos de toque)
         canvas.addEventListener('touchstart', (e) => {
             if (e.target.closest('#music-player')) return;
 
