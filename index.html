@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Presente pra ela</title>
+    <title>Nosso Universo - Uma Jornada</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500&family=Poppins:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
@@ -74,7 +74,7 @@
         #finale-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.4); 
+            background: rgba(0, 0, 0, 0.6); /* Levemente mais escuro para leitura */
             z-index: 200;
             display: flex;
             align-items: center;
@@ -82,14 +82,23 @@
             opacity: 0;
             pointer-events: none;
             transition: opacity 3s ease;
+            backdrop-filter: blur(5px);
         }
 
         #finale-overlay.visible { opacity: 1; pointer-events: auto; }
 
         .finale-content {
             text-align: center;
+            width: 90%; /* Largura responsiva */
             max-width: 600px;
             padding: 2rem;
+            max-height: 85vh; /* Altura máxima para não sair da tela */
+            overflow-y: auto; /* Permite rolar se o texto for longo */
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .finale-content::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
         }
 
         .finale-text {
@@ -140,6 +149,7 @@
             text-align: center;
             color: white;
             position: relative;
+            width: 90%; /* Garante margem em mobile */
         }
 
         .menu-text {
@@ -246,6 +256,18 @@
             .music-player { bottom: 1.5rem; width: 90%; justify-content: space-between; }
             .quote-label { width: 85vw; font-size: 1.1rem; }
             .menu-text { font-size: 0.95rem; }
+
+            /* Ajustes Responsivos Texto Final */
+            .finale-content {
+                width: 95%;
+                padding: 1.5rem;
+                max-height: 80vh;
+            }
+            .finale-text {
+                font-size: 1.1rem; /* Fonte ligeiramente menor */
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+            }
         }
         
         .hidden { opacity: 0 !important; visibility: hidden !important; }
@@ -268,6 +290,7 @@ Você entrou no momento em que eu menos esperava, mas, eu sempre soube que você
 Obrigado por tudo desde que nos conhecemos. Mesmo com pouco tempo, já tenho a certeza de que é com você que quero passar o resto dos meus dias. Desde aquele dia de novembro, venho me esforçando todos os dias para ser um homem de verdade, especialmente por você.
 
 E que, assim como esse céu estrelado, a nossa vida seja cheia de amor, carinho, respeito e reciprocidade."</p>
+            <p class="finale-sub">Fim da Jornada</p>
         </div>
     </div>
 
@@ -277,6 +300,7 @@ E que, assim como esse céu estrelado, a nossa vida seja cheia de amor, carinho,
             <p class="menu-text">
                 Duda, essas frases eu guardo faz uns 2 anos. Nenhuma foi gerada por IA; fui fundo pesquisando e reunindo as melhores. <br><br>
                 Queria dedicar todas elas pra você nesse site que eu codei. <br>
+                Explore o universo. Dê zoom para descobrir as estrelas.
             </p>
             <button class="start-btn" id="start-btn">Entrar no Universo</button>
         </div>
@@ -284,10 +308,10 @@ E que, assim como esse céu estrelado, a nossa vida seja cheia de amor, carinho,
 
     <!-- Áudios -->
     <audio id="bg-music" loop>
-        <source src="musica/MUSICADELA.mp3" type="audio/mpeg">
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=lofi-study-112591.mp3" type="audio/mpeg">
     </audio>
     <audio id="finale-music">
-        <source src="musica/MUSICAFINAL.mp3" type="audio/mpeg">
+        <source src="https://cdn.pixabay.com/download/audio/2022/03/24/audio_c8c8a73467.mp3?filename=cinematic-atmosphere-score-1-20920.mp3" type="audio/mpeg">
     </audio>
 
     <!-- Player -->
